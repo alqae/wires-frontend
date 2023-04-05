@@ -52,7 +52,7 @@ export class MessagesEffects {
       ofType(fromActions.createMessage),
       exhaustMap(({ title, text }) =>
         this._service.crateMessage({ title, text }).pipe(
-          map((response) => fromActions.createMessageSuccess(response)),
+          map(() => fromActions.loadMyMessages()),
           catchError((error) => of(fromActions.createMessageFailure(error)))
         )
       )

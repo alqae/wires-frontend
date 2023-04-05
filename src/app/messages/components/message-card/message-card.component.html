@@ -1,4 +1,4 @@
-<div class="w-card mb-2" [ngClass]="{'mb-7': !canComment}">
+<div class="w-card mb-2" [ngClass]="{'mb-7': !canComment && !comments.length}">
   <div class="w-card__content">
     <h3 class="mb-2">{{message.title}}</h3>
     <p class="mb-5">{{message.text}}</p>

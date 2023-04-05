@@ -6,8 +6,8 @@
     <input type="text" id="title" name="title" formControlName="title" placeholder="Talk about me">
 
     <ng-container *ngIf="getField('title')?.dirty">
-      <span class="error-message" *ngIf="getField('title')?.errors?.['minlength'].requiredLength">
-        The minimum length is {{getField('title')?.errors?.['minlength'].requiredLength}} characters
+      <span class="error-message" *ngIf="getField('title')?.errors?.['minlength']?.requiredLength">
+        The minimum length is {{getField('title')?.errors?.['minlength']?.requiredLength}} characters
       </span>
       <span class="error-message" *ngIf="getField('title')?.errors?.['required']">
         This field is required
