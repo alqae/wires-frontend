@@ -25,3 +25,26 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Screenshots
+### Home
+
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/home/home-desktop.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/home/home-laptop.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/home/home-tablet.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/home/home-mobile.png)
+
+### Login & Register
+
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/login-register/desktop-signin.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/login-register/mobile-signin.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/login-register/desktop-signup.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/login-register/mobile-signup.png)
+
+### Messages
+
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/messages/create-message.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/messages/my-messages.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/messages/all-messages.png)
+![image](https://github.com/alqae/wires-frontend/blob/master/screenshots/messages/menu.png)
+
