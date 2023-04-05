@@ -1,0 +1,45 @@
+@import '../variables';
+
+.btn__group {
+  .btn {
+    margin-right: 24px;
+  }
+
+  .btn:last-child {
+    margin-right: 0;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 48px;
+  border-radius: 25px;
+  font-size: 18px;
+  text-transform: capitalize;
+  border-width: 1px;
+  border-style: solid;
+    box-sizing: border-box;
+  font-weight: bold;
+
+  &__primary {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: $color-secondary;
+  }
+
+  &__secondary {
+    background-color: $color-secondary;
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+
+  &__tertiary {
+    background-color: $color-light-gray;
+    border-color: $color-light-gray;
+    color: $color-secondary;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}

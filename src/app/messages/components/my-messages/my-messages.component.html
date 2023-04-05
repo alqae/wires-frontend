@@ -1,0 +1,10 @@
+<form [formGroup]="filterMessagesForm" (ngSubmit)="onSubmit()" class="o-forms" *ngIf="showFilters">
+  <h1 class="o-forms__title">My Messages</h1>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="date">Date selected</label>
+    <input type="date" id="date" name="date" formControlName="date" placeholder="Search by date" >
+  </div>
+</form>
+
+<w-message-card [message]="message" *ngFor="let message of (messages$| async)"></w-message-card>

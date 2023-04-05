@@ -1,0 +1,48 @@
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="o-forms">
+  <h1 class="o-forms__title">Create a message</h1>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="title">Title</label>
+    <input type="text" id="title" name="title" formControlName="title" placeholder="Talk about me">
+
+    <ng-container *ngIf="getField('title')?.dirty">
+      <span class="error-message" *ngIf="getField('title')?.errors?.['minlength'].requiredLength">
+        The minimum length is {{getField('title')?.errors?.['minlength'].requiredLength}} characters
+      </span>
+      <span class="error-message" *ngIf="getField('title')?.errors?.['required']">
+        This field is required
+      </span>
+    </ng-container>
+  </div>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="title">Message</label>
+    <textarea
+      name="title"
+      id="title"
+      cols="30"
+      rows="5"
+      formControlName="text"
+      placeholder="Create message for share white friends. Max 700 chars">
+    </textarea>
+  
+    <ng-container *ngIf="getField('text')?.dirty">
+      <span class="error-message" *ngIf="getField('text')?.errors?.['pattern']">
+        Avoid writing with signs such as *-+;%&"
+      </span>
+      <span class="error-message" *ngIf="getField('text')?.errors?.['required']">
+        This field is required
+      </span>
+    </ng-container>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn__tertiary"
+    [disabled]="getField('text')?.errors || getField('title')?.errors"
+  >
+    Share
+  </button>
+</form>
+
+<w-my-messages [showFilters]="false"></w-my-messages>

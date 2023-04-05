@@ -1,0 +1,64 @@
+@import '../../../styles/utils'; 
+
+.w-auth {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  &__header {
+    @include media-breakpoint-down(md) {
+      position: relative;
+    }
+
+    .bg {
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+
+    img {
+      width: 100%;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 300px;
+      margin-bottom: 45px;
+
+      @include media-breakpoint-only(xs) {
+        margin-bottom: 0;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &::after {
+      background-image: linear-gradient(180deg, transparent 0%, $color-secondary 100%);
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 50px;
+      z-index: 3;
+    }
+  }
+
+  &__content {
+    max-width: 500px;
+
+    h1 {
+      display: none;
+
+      @include media-breakpoint-only(xs) {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@import '../../../../styles/variables.scss';
+
+.w-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  img {
+    width: 180px;
+  }
+
+  .menu {
+    visibility: hidden;
+    position: absolute;
+    overflow: visible;
+    right: 16px;
+    top: 110px;
+    width: 300px;
+    background-color: $color-light-gray;
+    text-align: left;
+    z-index: 3;
+
+    &__trigger {
+      position: relative;
+
+      img {
+        z-index: 3;
+        position: relative;
+      }
+    }
+
+    &__image {
+      width: 35px;
+      height: 35px;
+      position: relative;
+
+      img {
+        width: 100%;
+        z-index: 2;
+        position: relative;
+        display: block;
+      }
+    }
+
+    &__item {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      z-index: 3;
+
+      img {
+        width: 24px;
+        margin-right: 8px;
+      }
+
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+
+    h3,
+    span {
+      color: $color-black;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+    &__wrapper.open {
+      .menu {
+        visibility: visible;
+      }
+
+      .menu__trigger {
+        img {
+          filter: invert(1);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: 1;
+          width: 45px;
+          height: 45px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          padding: 0;
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+
+    button {
+      border: none;
+      display: inline-block;
+      background: none;
+      width: 35px;
+      height: 35px;
+      padding: 0;
+      transition-property: all;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

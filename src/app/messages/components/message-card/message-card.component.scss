@@ -1,0 +1,88 @@
+@import '../../../../styles/variables.scss';
+
+.w-card {
+  background-color: $color-light-gray;
+  width: 100%;
+  border-radius: 15px;
+  padding: 16px 24px;
+  box-sizing: border-box;
+
+  p, h3, span, h4 {
+    color: $color-black;
+  }
+
+  &__content {
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    span {
+      color: #3c3c3c;
+      font-size: 14px;
+    }
+
+    h4 {
+      font-size: 18px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.comments {
+  padding: 0;
+
+  &:not:has(.emojis) {
+    padding-top: 20px;
+  }
+
+  &__content {
+    background-color: #EAEAEA;
+    padding: 10px;
+    border-radius: 15px;
+
+    p {
+      color: $color-black;
+    }
+  
+    span {
+      opacity: 0.5;
+    }
+  }
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 8px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:not(:has(div)) {
+      justify-content: flex-end;
+    }
+
+    img {
+      height: 20px;
+    }
+
+    button {
+      font-size: 14px;
+      border-radius: 15px;
+      padding: 4px 16px;
+      font-weight: bold;
+      border: none;
+      background-color: $color-light-gray;
+    }
+  }
+}

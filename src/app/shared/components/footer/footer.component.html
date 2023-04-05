@@ -1,0 +1,29 @@
+<footer class="w-footer py-5 py-md-0">
+  <div class="promotion-banner container mb-5 py-1">
+    <div class="promotion-banner__image mr-1 mr-md-3">
+      <img src="../../../../assets/icons/QR.png" alt="QR">
+    </div>
+
+    <div class="promotion-banner__content">
+      <h4 class="mb-1">Scan to download</h4>
+      <h4>IOS & Android</h4>
+    </div>
+  </div>
+
+  <div class="list-cards grid-2 mb-5 mb-md-0">
+    <div
+      class="card-icon"
+      [ngClass]="{ 'col-6': isMobile, 'col-4': !isMobile }"
+      *ngFor="let item of (isMobile ? mobileItems : desktopItems)"
+    >
+      <img [src]="item.src" [alt]="item.alt">
+    </div>
+  </div>
+
+  <div class="btn__group hidden-md hidden-lg">
+    <a class="btn btn__primary" [routerLink]="['/auth/signup']">Sign up</a>
+    <a class="btn btn__secondary" [routerLink]="['/auth/signin']">Log in</a>
+  </div>
+
+  <div class="circle"></div>
+</footer>

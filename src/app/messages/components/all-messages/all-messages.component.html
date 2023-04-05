@@ -1,0 +1,18 @@
+<form [formGroup]="filterMessagesForm" (ngSubmit)="onSubmit()" class="o-forms">
+  <h1 class="o-forms__title">All Messages</h1>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="search">What search?</label>
+    <div class="o-forms__field__input">
+      <input type="text" id="search" name="search" formControlName="search" placeholder="Search by title or text" >
+      <img class="o-forms__field__suffix" src="../../../../assets/icons/search-outline.png" alt="Search">
+    </div>
+  </div>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="date">Date selected</label>
+    <input type="date" id="date" name="date" formControlName="date" placeholder="Search by date" >
+  </div>
+</form>
+
+<w-message-card [message]="message" *ngFor="let message of (messages$| async)"></w-message-card>

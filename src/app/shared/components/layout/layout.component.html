@@ -1,0 +1,9 @@
+<div class="w-layout">
+  <w-header *ngIf="!currentRoute.includes('auth')"></w-header>
+
+  <main role="main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <w-footer *ngIf="currentRoute === '/'"></w-footer>
+</div>

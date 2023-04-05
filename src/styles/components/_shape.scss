@@ -1,0 +1,17 @@
+.circle {
+  z-index: 1;
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: $color-primary;
+
+  @include media-breakpoint-down(md) {
+    opacity: 0.4;
+  }
+
+  @include media-breakpoint-only(xs) {
+    width: 700px;
+    height: 700px;
+  }
+}

@@ -1,0 +1,133 @@
+@import '../../styles/utils.scss';
+
+.left,
+.right {
+  background-color: transparent;
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 240px;
+  }
+
+  h2 {
+    max-width: 300px;
+
+    @include media-breakpoint-up(md) {
+      max-width: 350px;
+    }
+  }
+
+
+  &-half {
+    >p {
+      @include media-breakpoint-down(md) {
+        display: inline-block;
+        max-width: 70%;
+      }
+    }
+
+    .card-image {
+      display: flex;
+      box-sizing: border-box;
+      z-index: 3;
+
+      @include media-breakpoint-up(md) {
+        width: 500px;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+
+        @include media-breakpoint-up(md) {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+  }
+
+  .screenshot {
+    max-width: 350px;
+    position: inherit;
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+      z-index: 3;
+    }
+  }
+}
+
+.left {
+  
+  .circle {
+    top: -4%;
+    z-index: 1;
+    right: -130%;
+
+    @include media-breakpoint-up(md) {
+      top: 0;
+      right: -50%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      top: 18%;
+      right: -75%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include media-breakpoint-up(xl) {
+      top: 18%;
+      right: -42vw;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.right {
+  align-items: flex-start;
+  text-align: right;
+  position: relative;
+
+  h2 {
+    margin-left: auto;
+  }
+
+  .card-image {
+    flex-direction: row-reverse;
+  }
+
+  .screenshot {
+    position: inherit;
+    
+    .circle {
+      top: 30vh;
+      left: -140%;
+      z-index: 1;
+
+      @include media-breakpoint-only(md) {
+        top: 0;
+        transform: translate(-10%, -20%);
+      }
+
+      @include media-breakpoint-up(lg) {
+        top: 45%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &-half {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

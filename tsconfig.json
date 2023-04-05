@@ -3,6 +3,19 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "rxjs": ["node_modules/rxjs"],
+      "@app/*": ["src/app/*"],
+      "@environments/*": ["src/environments/*"],
+      "@models/*": ["src/app/models/*"],
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@auth/*": ["src/app/auth/*"],
+      "@signin/*": ["src/app/auth/signin/*"],
+      "@signup/*": ["src/app/auth/signup/*"],
+      "@messages/*": ["src/app/messages/*"],
+      "@styles/*": ["src/styles/*"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

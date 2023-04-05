@@ -1,0 +1,58 @@
+<form class="o-forms" [formGroup]="signupForm" autocomplete="off" (ngSubmit)="onSubmit()">
+  <button [routerLink]="['/auth/signin']" class="btn btn__secondary my-3" fullWidth>Sign in</button>
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="fullName">Nickname</label>
+    <input type="text" formControlName="username" id="username" placeholder="Nickname">
+
+    <span class="error-message" *ngIf="getField('username')?.dirty && getField('username')?.errors?.['required']">
+      This field is required
+    </span>
+  </div>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="fullname">Name</label>
+    <input type="text" formControlName="fullname" id="fullname" placeholder="Full name">
+
+    <span class="error-message" *ngIf="getField('fullname')?.dirty && getField('fullname')?.errors?.['required']">
+      This field is required
+    </span>
+  </div>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="email">Email adress</label>
+    <input type="text" formControlName="email" id="email" placeholder="Example@gmail.com">
+
+    <ng-container *ngIf="getField('email')?.dirty">
+      <span class="error-message" *ngIf="getField('email')?.errors?.['pattern']">
+        The email is not valid
+      </span>
+
+      <span class="error-message" *ngIf="getField('email')?.errors?.['required']">
+        This field is required
+      </span>
+    </ng-container>
+  </div>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="password">Password</label>
+    <div class="o-forms__field__input">
+      <input [type]="show ? 'text' : 'password'" formControlName="password" id="password" placeholder="******">
+      <img class="o-forms__field__suffix" src="../../../../assets/icons/eye.png" alt="Eye" (click)="show = !show">
+    </div>
+
+    <span class="error-message" *ngIf="getField('password')?.dirty && getField('password')?.errors?.['required']">
+      This field is required
+    </span>
+  </div>
+
+  <button type="submit" class="btn btn__tertiary" fullWidth
+    [disabled]="
+      getField('username')?.errors ||
+      getField('fullname')?.errors ||
+      getField('email')?.errors    ||
+      getField('password')?.errors
+    "
+  >
+    Create
+  </button>
+</form>

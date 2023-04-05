@@ -1,0 +1,38 @@
+<form class="o-forms" [formGroup]="signinForm" autocomplete="off" (ngSubmit)="onSubmit()">
+  <button [routerLink]="['/auth/signup']" class="btn btn__secondary my-3" fullWidth>Sign up</button>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="fullName">Nickname</label>
+    <input type="text" formControlName="username" id="username" placeholder="Nickname">
+
+    <span class="error-message" *ngIf="getField('username')?.dirty && getField('username')?.errors?.['required']">
+      This field is required
+    </span>
+  </div>
+
+  <div class="o-forms__field">
+    <label class="o-forms__field__label" for="password">Password</label>
+
+    <div class="o-forms__field__input">
+      <input [type]="show ? 'text' : 'password'" formControlName="password" id="password" placeholder="******">
+      <img class="o-forms__field__suffix" src="../../../../assets/icons/eye.png" alt="Eye" (click)="show = !show">
+    </div>
+
+    <span class="error-message" *ngIf="getField('password')?.dirty && getField('password')?.errors?.['required']">
+      This field is required
+    </span>
+  </div>
+
+  <button
+    type="submit"
+    class="btn
+    btn__tertiary"
+    fullWidth
+    [disabled]="
+      getField('username')?.errors ||
+      getField('password')?.errors
+    "
+  >
+    Sign In
+  </button>
+</form>

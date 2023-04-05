@@ -1,0 +1,51 @@
+<header class="w-header my-md-6 my-4 container">
+  <div>
+    <img src="../../../../assets/images/Logo.png" alt="Logo">
+  </div>
+
+  <div class="w-header__actions" *ngIf="userLogged">
+    <div class="menu__wrapper" [ngClass]="{'open': showActivityMenu }">
+      <button class="menu__trigger mr-2" (click)="toggleActivityMenu()">
+        <img src="../../../../assets/icons/chatbubbles{{showActivityMenu ? '-ellipses' : ''}}.png" alt="Search">
+      </button>
+
+      <nav class="menu">
+        <div class="menu__item">
+          <h3>{{userLogged.fullname}}</h3>
+        </div>
+      </nav>
+    </div>
+
+    <div class="menu__wrapper" [ngClass]="{'open': showNavigationMenu }">
+      <button class="menu__trigger" (click)="toggleNavigationMenu()">
+        <img src="../../../../assets/icons/menu.png" alt="menu">
+      </button>
+
+      <nav class="menu">
+        <div class="menu__item">
+          <h3>{{userLogged.fullname}}</h3>
+        </div>
+
+        <div (click)="toggleNavigationMenu()" class="menu__item" [routerLink]="['/messages/create']">
+          <img src="../../../../assets/icons/create.png" alt="Create">
+          <span>Create Messages</span>
+        </div>
+
+        <div (click)="toggleNavigationMenu()" class="menu__item" [routerLink]="['/messages/my']">
+          <img src="../../../../assets/icons/send.png" alt="Send">
+          <span>My Messages</span>
+        </div>
+
+        <div (click)="toggleNavigationMenu()" class="menu__item" [routerLink]="['/messages/all']">
+          <img src="../../../../assets/icons/chatbubbles-sharp.png" alt="Create">
+          <span>See all messages</span>
+        </div>
+
+        <div class="menu__item" (click)="toggleNavigationMenu(); logOut()">
+          <img src="../../../../assets/icons/log-out.png" alt="Log out">
+          <span>Logout</span>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

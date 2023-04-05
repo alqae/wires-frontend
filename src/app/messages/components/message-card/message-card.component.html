@@ -1,0 +1,32 @@
+<div class="w-card mb-2" [ngClass]="{'mb-7': !canComment}">
+  <div class="w-card__content">
+    <h3 class="mb-2">{{message.title}}</h3>
+    <p class="mb-5">{{message.text}}</p>
+  </div>
+
+  <div class="w-card__footer">
+    <span>{{message.createdAt | date: 'h:mm a d/M/yy' }}</span>
+    <h4>{{message.user?.fullname}}</h4>
+  </div>
+</div>
+
+<div class="w-card comments mb-2" *ngFor="let comment of comments">
+  <div class="comments__content">
+    <p>{{comment.comment}}</p>
+    <span>comment on the poublication of {{message.user?.fullname}}</span>
+    <div class="comments__actions">
+      <div>😃😰🫤😠😯😧</div>
+      <button type="submit">Send</button>
+    </div>
+  </div>
+</div>
+
+
+<form class="w-card comments mb-7" (ngSubmit)="onComment()" [formGroup]="commentForm" *ngIf="canComment">
+  <div class="comments__content">
+    <input type="text" formControlName="comment" placeholder="comment on the poublication of {{message.user?.fullname}}">
+    <div class="comments__actions">
+      <button type="submit">Send</button>
+    </div>
+  </div>
+</form>
